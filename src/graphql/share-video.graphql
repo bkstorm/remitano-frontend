@@ -1,0 +1,13 @@
+mutation shareVideo($id: ID!) {
+  shareVideo(id: $id) {
+    ... on Video {
+      id
+    }
+    ... on VideoError {
+      code
+    }
+    ... on Error {
+      sn: code
+    }
+  }
+}
