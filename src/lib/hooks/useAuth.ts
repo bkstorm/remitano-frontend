@@ -8,7 +8,7 @@ const TOKEN_KEY = 'token';
 export const useAuth = () => {
   const [user, setUser] = useState<User | undefined>(() => {
     const token = localStorage.getItem(TOKEN_KEY);
-    return (token && (jwt.decode(token) as User)) || undefined;
+    return (token && (jwt.decode(token)! as { user: User }).user) || undefined;
   });
 
   const saveUser = useCallback((user: User, token: string) => {
