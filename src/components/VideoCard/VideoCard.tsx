@@ -8,17 +8,14 @@ export interface VideoCardProps {
 export const VideoCard = ({ video }: VideoCardProps) => {
   return (
     <div className="flex gap-8 w-full">
-      <div>
-        <iframe
-          width="560"
-          height="315"
-          src={`https://www.youtube.com/embed/${video.youtubeId}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen></iframe>
-      </div>
-      <div className="w-full">
+      <iframe
+        width="560"
+        src={`https://www.youtube.com/embed/${video.youtubeId}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen></iframe>
+      <div className="w-full hidden lg:block">
         <h3 className="text-red-500 font-bold">{video.title}</h3>
         <div className="text-gray-500">
           Shared by:{' '}
