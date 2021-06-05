@@ -49,7 +49,7 @@ export const Header = () => {
   );
 
   return (
-    <div className="container flex justify-between m-4">
+    <div className="container mx-auto flex justify-between m-4 border-b-2 border-solid pb-4">
       <div className="flex justify-between">
         <div className="flex items-baseline space-x-2 prose prose-sm">
           <svg
