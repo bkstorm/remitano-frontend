@@ -38,5 +38,5 @@
 }
 
 .btn {
-  @apply border border-gray-300 p-2;
+  @apply border p-2 focus:outline-none;
 }
