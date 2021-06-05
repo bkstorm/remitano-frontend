@@ -6,7 +6,7 @@ import { useVideosLazyQuery, Video } from '../../graphql/graphql';
 export const Home = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [hasMore, setHashMore] = useState(true);
-  const [getVideos, { loading, data, error }] = useVideosLazyQuery({
+  const [getVideos, { loading, error }] = useVideosLazyQuery({
     onCompleted: (data) => {
       if (data.videos.length) {
         setVideos([...videos, ...data.videos]);
