@@ -1,0 +1,12 @@
+query videos($limit: Int, $offset: Int) {
+  videos(limit: $limit, offset: $offset) {
+    id
+    title
+    description
+    youtubeId
+    user {
+      id
+      account
+    }
+  }
+}
