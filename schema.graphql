@@ -17,25 +17,23 @@ type User {
 }
 
 type Mutation {
-  signUp(password: String!, account: String!): SignUpOrError!
   login(password: String!, account: String!): LoginOrError!
   shareVideo(id: ID!): VideoOrError!
 }
 
-union SignUpOrError = AuthPayload | SignUpError | Error
+union LoginOrError = AuthPayload | LoginError | Error
 
 type AuthPayload {
   user: User!
   token: String!
 }
 
-type SignUpError {
-  code: SignUpErrorCode!
+type LoginError {
+  code: LoginErrorCode!
 }
 
-# Sign up error codes
-enum SignUpErrorCode {
-  ACCOUNT_ALREADY_EXISTS
+enum LoginErrorCode {
+  INVALID_PASSWORD
 }
 
 type Error {
@@ -46,16 +44,6 @@ enum ErrorCode {
   INTERNAL_SERVER_ERROR
   FORBIDDEN
   NOT_FOUND
-}
-
-union LoginOrError = AuthPayload | LoginError | Error
-
-type LoginError {
-  code: LoginErrorCode!
-}
-
-enum LoginErrorCode {
-  INVALID_USERNAME_OR_PASSWORD
 }
 
 union VideoOrError = Video | VideoError | Error

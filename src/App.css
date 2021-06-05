@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  @apply border border-gray-300 p-2;
+}

@@ -1,0 +1,17 @@
+mutation login($account: String!, $password: String!) {
+  login(account: $account, password: $password) {
+    ... on AuthPayload {
+      user {
+        id
+        account
+      }
+      token
+    }
+    ... on LoginError {
+      code
+    }
+    ... on Error {
+      ce: code
+    }
+  }
+}
